@@ -1,4 +1,4 @@
-package main.java.edu.uml.bcabral;
+package edu.uml.bcabral;
 
 
 import java.util.Collection;
@@ -32,33 +32,33 @@ public class MyHashMap<K,V> implements Map<K,V> {
     }
 
     @Override
-    public Object get(Object key) {
+    public V get(Object key) {
         return this.myMap.get(key);
     }
 
     @Override
-    public Object put(Object key, Object value) {
+    public V put(K key, V value) {
         return this.myMap.put( key,  value);
     }
 
     @Override
-    public Object remove(Object key) {
+    public V remove(Object key) {
         return this.remove(key);
     }
 
     @Override
     public void putAll(Map m) {
-
+        this.myMap.putAll(m);
     }
 
     @Override
     public void clear() {
-
+        this.myMap.clear();
     }
 
     @Override
     public Set keySet() {
-        return null;
+        return this.myMap.keySet();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
     }
 
     @Override
-    public Set<Entry> entrySet() {
-        return this.myMap.entrySet();
+    public Set<Entry<K,V>> entrySet() {
+        return this.entrySet();
     }
 }
